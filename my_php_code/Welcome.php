@@ -1,17 +1,29 @@
 <?php
 session_start();
-
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 if (
     isset($_SESSION["sname"]) && isset($_SESSION["sid"])
     && isset($_SESSION["smobile"])
 ) {
-    header("LOcation:sellerHomePage.php");
+    if (
+        $_SESSION["sname"] != "" && $_SESSION["sid"] != ""
+        && $_SESSION["smobile"] != ""
+    ) {
+        header("Location:sellerHomePage");
+    }
 } else if (
     isset($_SESSION["uname"]) && isset($_SESSION["uid"])
     && isset($_SESSION["umobile"])
 ) {
-    header("LOcation:userHomePage.php");
+    if (
+        $_SESSION["uname"] != "" && $_SESSION["uid"] != ""
+        && $_SESSION["umobile"] != ""
+    ) {
+        header("Location:userHomePage.php");
+    }
 }
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 // if (!isset($_SESSION["loginstatus"])) {
 //     $_SESSION["postpage"] = "";
 //     $_SESSION["uname"] = "";
@@ -137,8 +149,8 @@ if (
                                         </h2>
                                         <h6 class="rounded-left"><a href="../my_php_code/login.php"> Login</a></h6>
                                         <h6 class="rounded-left"><a href="../my_php_code/user_sign_up.php">Creat Account</a></h6>
-                                        <h6 class="rounded-left "><a href="">Forgate password</a></h6>
-                                        <h6 class="rounded-left"><a href="">Forgate Account</a></h6>
+                                        <h6 class="rounded-left "><a href="../my_php_code/user_forgate_password.php">Forgate password</a></h6>
+
                                     </td>
                                 </tr>
                             </table>
@@ -160,8 +172,8 @@ if (
                                         </h2>
                                         <h6 class="rounded-left"><a href="../my_php_code/login.php"> Login</a></h6>
                                         <h6 class="rounded-left"><a href="seller_sign_up.php">Creat Account</a></h6>
-                                        <h6 class="rounded-left"><a href="">Forgate password</a></h6>
-                                        <h6 class="rounded-left"><a href="">Forgate Account</a></h6>
+                                        <h6 class="rounded-left"><a href="../my_php_code/user_forgate_password.php">Forgate password</a></h6>
+
                                     </td>
                                 </tr>
                             </table>

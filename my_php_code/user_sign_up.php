@@ -20,9 +20,30 @@
 </head>
 
 <?php
-
 include "./db_manager.php";
-
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+if (
+     isset($_SESSION["sname"]) && isset($_SESSION["sid"])
+     && isset($_SESSION["smobile"])
+) {
+     if (
+          $_SESSION["sname"] != "" && $_SESSION["sid"] != ""
+          && $_SESSION["smobile"] != ""
+     ) {
+          header("Location:sellerHomePage");
+     }
+} else if (
+     isset($_SESSION["uname"]) && isset($_SESSION["uid"])
+     && isset($_SESSION["umobile"])
+) {
+     if (
+          $_SESSION["uname"] != "" && $_SESSION["uid"] != ""
+          && $_SESSION["umobile"] != ""
+     ) {
+          header("Location:userHomePage.php");
+     }
+}
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 $db = new DbManager();
 $db->connDatabase();
@@ -113,7 +134,7 @@ if ($_SESSION["postpage"] == "editprofile") {
           }
      }
 } else {
-     if (isset($_SESSION["loginstatus"])) {
+     if (!isset($_SESSION["loginstatus"])) {
           header("Location:Welcome.php");
      }
      // echo "else part excuted now";
@@ -222,12 +243,14 @@ if ($is_done === "yess") {
                     <p class="tittle" style="font-size: 1.5rem;"><b> Sigh Up </b></p>
                     <span onclick="location.href='./Welcome.php'" class="close" title="Close Modal">&times;</span>
                </div>
+
                <div class="alert alert-success m-1">
                     <h6 style="margin: 0px; text-align: center; color: red;"><i>
                               <?php echo $_SESSION["dberror"]  . $_SESSION["error"] .  $_SESSION["status"] ?>
                          </i>
                     </h6>
                </div>
+
                <div class="container">
 
                     <div class="d-flex justify-content-between">
@@ -327,6 +350,8 @@ if ($is_done === "yess") {
      var valiedpass = false;
      var valiedmobile = false;
      var valiedemail = false;
+
+     console.log("till correct");
 
      if ("<?php echo $_SESSION["postpage"]; ?>" == "editprofile") {
           valiedpass = true;

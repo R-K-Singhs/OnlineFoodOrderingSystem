@@ -122,7 +122,7 @@ if ($_SESSION["postpage"] == "editprofile") {
         }
     }
 } else {
-    if (isset($_SESSION["loginstatus"])) {
+    if (!isset($_SESSION["loginstatus"])) {
         header("Location:Welcome.php");
     }
     // echo "else part excuted now";

@@ -19,8 +19,30 @@
 
  <?php
     require "./db_manager.php";
-
     $seterror = "";
+    // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    if (
+        isset($_SESSION["sname"]) && isset($_SESSION["sid"])
+        && isset($_SESSION["smobile"])
+    ) {
+        if (
+            $_SESSION["sname"] != "" && $_SESSION["sid"] != ""
+            && $_SESSION["smobile"] != ""
+        ) {
+            header("Location:sellerHomePage");
+        }
+    } else if (
+        isset($_SESSION["uname"]) && isset($_SESSION["uid"])
+        && isset($_SESSION["umobile"])
+    ) {
+        if (
+            $_SESSION["uname"] != "" && $_SESSION["uid"] != ""
+            && $_SESSION["umobile"] != ""
+        ) {
+            header("Location:userHomePage.php");
+        }
+    }
+    // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
     if ($_SESSION["postpage"] == "userLogin") {
         if ($_SERVER["REQUEST_METHOD"] == "POST") {

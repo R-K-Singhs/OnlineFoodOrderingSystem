@@ -67,6 +67,10 @@
 
 <?php
 require "./db_manager.php";
+if ($_SESSION["loginstatus"] === "seller") {
+    $_SESSION["postpage"] = "userLogin";
+    header("Location:login.php");
+}
 $db = new DbManager();
 $db->connDatabase();
 

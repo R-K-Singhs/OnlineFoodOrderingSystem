@@ -7,9 +7,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION["loginstatus"] = "";
         if ($_POST["name"] === "userReq") {
             $_SESSION["postpage"] = "userLogin";
+            $_SESSION["uname"] = "";
+            $_SESSION["uid"] = "";
+            $_SESSION["umobile"] = "";
+            $_SESSION["uemail"] = "";
+            $_SESSION["upassword"] = "";
+            $_SESSION["uaddress"] = "";
+            $_SESSION["udob"] = "";
+            $_SESSION["uprofileimg"] = "";
             echo "done";
         } else if ($_POST["name"] === "sellerReq") {
             $_SESSION["postpage"] = "sellerLogin";
+            $_SESSION["sname"] = "";
+            $_SESSION["sid"] = "";
+            $_SESSION["smobile"] = "";
+            $_SESSION["semail"] = "";
+            $_SESSION["spassword"] = "";
+            $_SESSION["saddress"] = "";
+            $_SESSION["sdob"] = "";
+            $_SESSION["sprofileimg"] = "";
+            $_SESSION["shopname"] = "";
+            $_SESSION["shopnum"] = "";
+            $_SESSION["adharcard"] = "";
+            $_SESSION["pancard"] = "";
+            $_SESSION["pincode"] = "";
+            $_SESSION["sot"] = "";
+            $_SESSION["sct"] = "";
+
             echo "done";
         } else {
             echo "faild";
