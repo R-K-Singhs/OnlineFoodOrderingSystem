@@ -92,13 +92,11 @@ if ($_SESSION["productId"] != "") {
     </nav>
 
     <div class=" d-flex justify-content-center p-2">
-        <img id="expandedImg" src="../my_images/wallpaper1.jpg" width="100%" height="300px" alt="Loading.......">
+        <img id="expandedImg" src="../my_images/wallpaper1.jpg" width="100%" height="500px" alt="Loading.......">
     </div>
-
     <!-- The grid: four columns -->
     <div id="allimages" class="d-flex justify-content-center bg-secondary p-2 flex-wrap">
     </div>
-
 
     <div class="d-flex justify-content-between p-2 bg-secondary border border-dark text-center">
         <span class="text-center text-white">

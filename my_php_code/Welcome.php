@@ -11,7 +11,8 @@ if (
     ) {
         header("Location:sellerHomePage");
     }
-} else if (
+}
+if (
     isset($_SESSION["uname"]) && isset($_SESSION["uid"])
     && isset($_SESSION["umobile"])
 ) {
@@ -23,34 +24,6 @@ if (
     }
 }
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-// if (!isset($_SESSION["loginstatus"])) {
-//     $_SESSION["postpage"] = "";
-//     $_SESSION["uname"] = "";
-//     $_SESSION["uid"] = "";
-//     $_SESSION["umobile"] = "";
-//     $_SESSION["uemail"] = "";
-//     $_SESSION["upassword"] = "";
-//     $_SESSION["uaddress"] = "";
-//     $_SESSION["udob"] = "";
-//     $_SESSION["uprofileimg"] = "";
-
-//     $_SESSION["sname"] = "";
-//     $_SESSION["sid"] = "";
-//     $_SESSION["smobile"] = "";
-//     $_SESSION["semail"] = "";
-//     $_SESSION["spassword"] = "";
-//     $_SESSION["saddress"] = "";
-//     $_SESSION["sdob"] = "";
-//     $_SESSION["sprofileimg"] = "";
-//     $_SESSION["shopname"] = "";
-//     $_SESSION["shopnum"] = "";
-//     $_SESSION["adharcard"] = "";
-//     $_SESSION["pancard"] = "";
-//     $_SESSION["pincode"] = "";
-//     $_SESSION["sot"] = "";
-//     $_SESSION["sct"] = "";
-// }
 
 ?>
 
@@ -204,7 +177,6 @@ if (
                                         <h6 class="rounded-left"><a href="../my_php_code/login.php"> Login</a></h6>
                                         <h6 class="rounded-left"><a href="../my_php_code/user_sign_up.php">Creat Account</a></h6>
                                         <h6 class="rounded-left "><a href="">Forgate password</a></h6>
-                                        <h6 class="rounded-left"><a href="">Forgate Account</a></h6>
                                     </td>
                                 </tr>
                             </table>
@@ -227,7 +199,6 @@ if (
                                         <h6 class="rounded-left"><a href="../my_php_code/login.php"> Login</a></h6>
                                         <h6 class="rounded-left"><a href="../my_php_code/sign_up.php">Creat Account</a></h6>
                                         <h6 class="rounded-left"><a href="">Forgate password</a></h6>
-                                        <h6 class="rounded-left"><a href="">Forgate Account</a></h6>
                                     </td>
                                 </tr>
                             </table>
@@ -258,7 +229,6 @@ if (
                                         <h6 class="rounded-left"><a href="../my_php_code/login.php"> Login</a></h6>
                                         <h6 class="rounded-left"><a href="../my_php_code/user_sign_up.php">Creat Account</a></h6>
                                         <h6 class="rounded-left "><a href="">Forgate password</a></h6>
-                                        <h6 class="rounded-left"><a href="">Forgate Account</a></h6>
                                     </td>
                                 </tr>
                             </table>
@@ -281,7 +251,6 @@ if (
                                         <h6 class="rounded-left"><a href="../my_php_code/login.php"> Login</a></h6>
                                         <h6 class="rounded-left"><a href="../my_php_code/sign_up.php">Creat Account</a></h6>
                                         <h6 class="rounded-left"><a href="">Forgate password</a></h6>
-                                        <h6 class="rounded-left"><a href="">Forgate Account</a></h6>
                                     </td>
                                 </tr>
                             </table>
@@ -312,7 +281,6 @@ if (
                                         <h6 class="rounded-left"><a href="../my_php_code/login.php"> Login</a></h6>
                                         <h6 class="rounded-left"><a href="../my_php_code/user_sign_up.php">Creat Account</a></h6>
                                         <h6 class="rounded-left "><a href="">Forgate password</a></h6>
-                                        <h6 class="rounded-left"><a href="">Forgate Account</a></h6>
                                     </td>
                                 </tr>
                             </table>
@@ -335,7 +303,6 @@ if (
                                         <h6 class="rounded-left"><a href="../my_php_code/login.php"> Login</a></h6>
                                         <h6 class="rounded-left"><a href="../my_php_code/sign_up.php">Creat Account</a></h6>
                                         <h6 class="rounded-left"><a href="">Forgate password</a></h6>
-                                        <h6 class="rounded-left"><a href="">Forgate Account</a></h6>
                                     </td>
                                 </tr>
                             </table>
@@ -366,7 +333,6 @@ if (
                                         <h6 class="rounded-left"><a href="../my_php_code/login.php"> Login</a></h6>
                                         <h6 class="rounded-left"><a href="../my_php_code/user_sign_up.php">Creat Account</a></h6>
                                         <h6 class="rounded-left "><a href="">Forgate password</a></h6>
-                                        <h6 class="rounded-left"><a href="">Forgate Account</a></h6>
                                     </td>
                                 </tr>
                             </table>
@@ -389,7 +355,6 @@ if (
                                         <h6 class="rounded-left"><a href="../my_php_code/login.php"> Login</a></h6>
                                         <h6 class="rounded-left"><a href="../my_php_code/sign_up.php">Creat Account</a></h6>
                                         <h6 class="rounded-left"><a href="">Forgate password</a></h6>
-                                        <h6 class="rounded-left"><a href="">Forgate Account</a></h6>
                                     </td>
                                 </tr>
                             </table>

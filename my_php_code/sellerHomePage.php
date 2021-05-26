@@ -16,7 +16,7 @@
 
 <?php
 require "./db_manager.php";
-if ($_SESSION["loginstatus"] != "seller") {
+if ($_SESSION["loginstatus"] != "seller" || !isset($_SESSION["loginstatus"])) {
     $_SESSION["postpage"] = "sellerLogin";
     header("Location:login.php");
 }

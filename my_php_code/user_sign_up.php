@@ -22,25 +22,28 @@
 <?php
 include "./db_manager.php";
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-if (
-     isset($_SESSION["sname"]) && isset($_SESSION["sid"])
-     && isset($_SESSION["smobile"])
-) {
+if ($_SESSION["postpage"] != "editprofile") {
      if (
-          $_SESSION["sname"] != "" && $_SESSION["sid"] != ""
-          && $_SESSION["smobile"] != ""
+          isset($_SESSION["sname"]) && isset($_SESSION["sid"])
+          && isset($_SESSION["smobile"])
      ) {
-          header("Location:sellerHomePage");
+          if (
+               $_SESSION["sname"] != "" && $_SESSION["sid"] != ""
+               && $_SESSION["smobile"] != ""
+          ) {
+               header("Location:sellerHomePage");
+          }
      }
-} else if (
-     isset($_SESSION["uname"]) && isset($_SESSION["uid"])
-     && isset($_SESSION["umobile"])
-) {
      if (
-          $_SESSION["uname"] != "" && $_SESSION["uid"] != ""
-          && $_SESSION["umobile"] != ""
+          isset($_SESSION["uname"]) && isset($_SESSION["uid"])
+          && isset($_SESSION["umobile"])
      ) {
-          header("Location:userHomePage.php");
+          if (
+               $_SESSION["uname"] != "" && $_SESSION["uid"] != ""
+               && $_SESSION["umobile"] != ""
+          ) {
+               header("Location:userHomePage.php");
+          }
      }
 }
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -118,7 +121,7 @@ if ($_SESSION["postpage"] == "editprofile") {
                          $_SESSION["udob"] = $row["dob"];
                          $_SESSION["uprofileimg"] = $row["profile"];
                          $_SESSION["status"] = "";
-
+                         $_SESSION["postpage"] != "";
                          $is_done = "yes";
                     } else {
                          $_SESSION["dberror"] = "<h3>Your pProfile is not Updated </h3> <br>";
@@ -190,6 +193,7 @@ if ($_SESSION["postpage"] == "editprofile") {
                          $_SESSION["dbstatus"] = "<h3>Your Account created successfuly</h3>" . "<br> ";
 
                          $row = $data->fetch_assoc();
+
                          $_SESSION["uname"] = $row["name"];
                          $_SESSION["uid"] = $row["id"];
                          $_SESSION["umobile"] = $row["mobile"];
@@ -198,6 +202,7 @@ if ($_SESSION["postpage"] == "editprofile") {
                          $_SESSION["uaddress"] = $row["address"];
                          $_SESSION["udob"] = $row["dob"];
                          $_SESSION["uprofileimg"] = $row["profile"];
+                         $_SESSION["loginstatus"] = "user";
                          $_SESSION["status"] = "";
 
                          $is_done = "yess";

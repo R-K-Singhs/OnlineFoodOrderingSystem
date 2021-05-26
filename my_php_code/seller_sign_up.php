@@ -23,6 +23,35 @@
 
 include "./db_manager.php";
 
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+if ($_SESSION["postpage"] != "editprofile") {
+    if (
+        isset($_SESSION["sname"]) && isset($_SESSION["sid"])
+        && isset($_SESSION["smobile"])
+    ) {
+        if (
+            $_SESSION["sname"] != "" && $_SESSION["sid"] != ""
+            && $_SESSION["smobile"] != ""
+        ) {
+            header("Location:sellerHomePage");
+        }
+    }
+    if (
+        isset($_SESSION["uname"]) && isset($_SESSION["uid"])
+        && isset($_SESSION["umobile"])
+    ) {
+        if (
+            $_SESSION["uname"] != "" && $_SESSION["uid"] != ""
+            && $_SESSION["umobile"] != ""
+        ) {
+            header("Location:userHomePage.php");
+        }
+    }
+}
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
 $db = new DbManager();
 $db->connDatabase();
 $_SESSION["dbstatus"] = "";
@@ -108,7 +137,7 @@ if ($_SESSION["postpage"] == "editprofile") {
                     $_SESSION["sot"] = $row["sot"];
                     $_SESSION["sct"] = $row["sct"];
                     $_SESSION["status"] = "";
-
+                    $_SESSION["postpage"] != "";
                     $is_done = "yes";
                 } else {
                     // $_SESSION["dberror"] = "<h3>Your profile is not Updated </h3> <br>";
@@ -200,6 +229,7 @@ if ($_SESSION["postpage"] == "editprofile") {
                     $_SESSION["sot"] = $row["sot"];
                     $_SESSION["sct"] = $row["sct"];
                     $_SESSION["status"] = "";
+                    $_SESSION["loginstatus"] = "seller";
 
                     $is_done = "yess";
                 } else {

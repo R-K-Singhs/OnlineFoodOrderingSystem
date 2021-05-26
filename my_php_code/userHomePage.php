@@ -57,17 +57,13 @@
         .show {
             display: inline;
         }
-
-        .carousel-inner img {
-
-            height: 400px;
-        }
     </style>
 </head>
 
 <?php
 require "./db_manager.php";
-if ($_SESSION["loginstatus"] === "seller") {
+$_SESSION["postpage"] = "";
+if ($_SESSION["loginstatus"] === "seller" || !isset($_SESSION["loginstatus"])) {
     $_SESSION["postpage"] = "userLogin";
     header("Location:login.php");
 }
@@ -138,7 +134,7 @@ if ($result->num_rows > 0) {
             </div>
         </div>
     </nav>
-    <div id="carouselExampleIndicators" style="height: 400px;" class="carousel slide" data-ride="carousel">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>

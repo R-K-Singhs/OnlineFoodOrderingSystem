@@ -31,7 +31,8 @@
         ) {
             header("Location:sellerHomePage");
         }
-    } else if (
+    }
+    if (
         isset($_SESSION["uname"]) && isset($_SESSION["uid"])
         && isset($_SESSION["umobile"])
     ) {
@@ -74,6 +75,7 @@
                     $_SESSION["udob"] = $row["dob"];
                     $_SESSION["uprofileimg"] = $row["profile"];
                     $_SESSION["loginstatus"] = "user";
+                    $_SESSION["status"] = "";
 
                     header("Location:userHomePage.php");
                 } else {
@@ -127,6 +129,7 @@
         $seterror = "<h1>your request is no accepted</h1>";
     }
     ?>
+
 
  <body>
      <div id="id01">
