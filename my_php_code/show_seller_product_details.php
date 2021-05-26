@@ -101,7 +101,7 @@ if ($_SESSION["productId"] != "") {
     </nav>
     <div style="height: 70px;"></div>
     <div class=" d-flex justify-content-center p-2">
-        <img id="expandedImg" src="../my_images/wallpaper1.jpg" width="100%" height="300px" alt="Loading.......">
+        <img id="expandedImg" src="../my_images/wallpaper1.jpg" width="100%" height="500px" alt="Loading.......">
     </div>
 
     <!-- The grid: four columns -->
